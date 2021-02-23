@@ -1,0 +1,33 @@
+###Testing endpoints usig VsCode REST Client extension
+@api = http://localhost:3000
+
+### / 
+GET {{api}}
+
+
+### /register
+POST {{api}}/api/register
+Content-Type: application/json
+
+{
+  "firstname": "Rick",
+  "lastname": "Sanchez",
+  "email": "rick.sanchez@rickandmorty.com",
+  "password": "12345678",
+  "password2": "12345678"
+}
+
+### /login
+POST {{api}}/api/login
+Content-Type: application/json
+
+{
+  "email": "rick.sanchez@rickandmorty.com",
+  "password": "12345678"
+}
+
+###
+GET {{api}}/api/profile
+
+###
+GET {{api}}/api/logout
