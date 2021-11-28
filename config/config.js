@@ -5,7 +5,7 @@ const config = {
   },
   default: {
     SECRET: 'a secret word',
-    DATABASE: 'mongodb://localhost/jwt'
+    DATABASE: 'mongodb://localhost/sport'
   }
 }
 
