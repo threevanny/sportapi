@@ -7,7 +7,7 @@ const indexRouter = require('./routes/index.routes')
 const authRouter = require('./routes/auth.routes')
 
 const app = express()
-
+app.use(cors())
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
 app.use(cookieparser())
