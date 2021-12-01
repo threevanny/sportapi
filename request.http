@@ -14,8 +14,9 @@ Content-Type: application/json
   "lastname": "Sanchez",
   "email": "rick.sanchez@rickandmorty.com",
   "password": "12345678",
-  "password2": "12345678"
-}
+  "password2": "12345678",
+  "role": "coach"
+  }
 
 ### /login
 POST {{api}}/api/login
@@ -27,7 +28,10 @@ Content-Type: application/json
 }
 
 ###
-GET {{api}}/api/profile
+POST  {{api}}/api/profile
 
 ###
 GET {{api}}/api/logout
+
+###
+P {{api}}/api/user/61a50180a98d9c2bd858e111

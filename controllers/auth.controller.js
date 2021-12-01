@@ -1,3 +1,4 @@
+const { removeListener } = require('npmlog')
 const User = require('../models/user')
 
 const authCtrl = {}
@@ -17,7 +18,7 @@ authCtrl.register = (req, res) => {
         return res.status(400).json({ success: false })
       }
       res.status(200).json({
-        succes: true,
+        success: true,
         user: doc
       })
     })
@@ -44,8 +45,12 @@ authCtrl.login = (req, res) => {
             if (err) return res.status(400).send(err)
             res.cookie('auth', user.token).json({
               isAuth: true,
-              id: user._id
-              , email: user.email
+              id: user._id,
+              email: user.email,
+              firstname: user.firstname,
+              lastname: user.lastname,
+              token: user.token,
+              role: user.role
             })
           })
         })
@@ -56,10 +61,13 @@ authCtrl.login = (req, res) => {
 
 authCtrl.goToProfile = (req, res) => {
   res.json({
-    isAuth: true,
+    
     id: req.user._id,
     email: req.user.email,
-    name: `${req.user.firstname} ${req.user.lastname}`
+    firstname: req.user.firstname,
+    lastname: req.user.lastname,
+    token: req.user.token,
+    role: req.user.role
   })
 }
 
@@ -67,6 +75,13 @@ authCtrl.logout = (req, res) => {
   req.user.deleteToken(req.token, (err, user) => {
     if (err) return res.status(400).send(err)
     res.sendStatus(200)
+  })
+}
+
+authCtrl.getUser = (req, res) => {
+  User.findById(req.params.id, (err, user) => {
+    if (err) return res.status(400).send(err)
+    res.json(user)
   })
 }
 

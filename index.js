@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyparser = require('body-parser')
 const cookieparser = require('cookie-parser')
+const cors = require('cors')
 
 const indexRouter = require('./routes/index.routes')
 const authRouter = require('./routes/auth.routes')
