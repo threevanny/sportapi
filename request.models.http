@@ -1,0 +1,57 @@
+###
+@API = http://localhost:3000
+
+### / 
+GET {{API}}
+
+
+### SCENARIOS
+POST {{API}}/api/scenario/create
+Content-Type: application/json
+
+{
+  "name": "Estadio municipal #2",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "location": "Avenida S.B #5-10",
+  "sports": "Futbol",
+  "capacity": "5200"
+}
+
+### TEAMS
+GET {{API}}/api/scenario/all
+
+### TEAMS
+
+POST {{API}}/api/team/create
+Content-Type: application/json
+
+{
+  "name": "Pumas",
+  "type": "Futbol Sala",
+  "logo": "https://www.pnguniverse.com/wp-content/uploads/2020/10/Federacion-colombiana-de-futbol-1024x1024.png",
+  "members": ["Edgar Gomez","Alan Gil", "Juan Perez", "Camilo Reyes", "Duvan Zapata"],
+  "coach": "Jim Morrison"
+}
+
+###
+GET {{API}}/api/team/all
+
+### TEAMS
+GET {{API}}/api/scenario/all
+
+### TOURNAMENTS
+
+POST {{API}}/api/tournament/create
+Content-Type: application/json
+
+{
+  "name": "Torneo municipal de Futbol Sala 2021", 
+  "type": "Futbol Sala",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "teams": ["Leones","Pumas", "Aguilas", "Tiburones", "Unicornios"],
+  "referee": "Daniel Reyes",
+  "scenario": "Estadio municipal #2"
+}
+
+###
+GET {{API}}/api/tournament/all
