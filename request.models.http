@@ -50,7 +50,8 @@ Content-Type: application/json
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   "teams": ["Leones","Pumas", "Aguilas", "Tiburones", "Unicornios"],
   "referee": "Daniel Reyes",
-  "scenario": "Estadio municipal #2"
+  "scenario": "Estadio municipal #2",
+  "status": "activo"
 }
 
 ###
