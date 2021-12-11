@@ -5,7 +5,7 @@ const config = {
   },
   default: {
     SECRET: 'a secret word',
-    DATABASE: 'mongodb://localhost/sport'
+    DATABASE: 'mongodb://localhost/sport'|| process.env.MONGODB_URI
   }
 }
 
