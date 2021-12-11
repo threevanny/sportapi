@@ -4,7 +4,7 @@ const router = express.Router()
 var cors = require('cors')
 
 var corsOptions = {
-  origin: 'https://threevanny.github.io/sportapp',
+  origin: 'https://threevanny.github.io/',
   optionsSuccessStatus: 200 
 }
 
